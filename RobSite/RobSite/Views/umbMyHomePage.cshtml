@@ -1,0 +1,871 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    var settingsNode = @CurrentPage.AncestorOrSelf(1).Children.Where("Name == \"Settings\"").First();
+}
+
+<!-- HEADER SECTION CONTENT -->
+<!-- HEADER -->
+<div id="header-landing">
+    @{ Html.RenderPartial("_TopNavigation"); }
+    <div class="awesome-slogan">
+        <h2>@CurrentPage.bannerheader</h2>
+        <h4>@CurrentPage.bannersubheader</h4>
+        <p>FOLLOW US</p>
+        <div class="clear"></div>
+        <div class="social-icons">
+            <a href="@settingsNode.github" data-toggle="tooltip" title="Github"><img src="assets/img/social-icons/github.png" alt="Github icon"></a>
+            <a href="@settingsNode.linkedin" data-toggle="tooltip" title="Linked In"><img src="assets/img/social-icons/likedin.png" alt="Linkedin icon"></a>
+            <a href="@settingsNode.stackoverflow" data-toggle="tooltip" title="Stack Overflow"><img src="assets/img/social-icons/stackoverflow.png" alt="Tumblr icon"></a>
+            <a href="@settingsNode.twitter" data-toggle="tooltip" title="Twitter"><img src="assets/img/social-icons/twitter.png" alt="Twitter icon"></a>
+            <a href="@settingsNode.facebook" data-toggle="tooltip" title="Facebook"><img src="assets/img/social-icons/facebook.png" alt="Facebook icon"></a>
+
+            @*            <a href="#fakelink" data-toggle="tooltip" title="Google+"><img src="assets/img/social-icons/gplus.png" alt="Gplus icon"></a>*@
+            @*            <a href="#fakelink" data-toggle="tooltip" title="Vimeo"><img src="assets/img/social-icons/vimeo.png" alt="Vimeo icon"></a>*@
+            @*            <a href="#fakelink" data-toggle="tooltip" title="Youtube"><img src="assets/img/social-icons/youtube.png" alt="Youtube icon"></a>*@
+        </div>
+    </div>
+    <!-- END HEADER SECTION CONTENT -->
+</div>
+<!-- END HEADER -->
+<!-- SEECTION THEME COLOR -->
+<div class="section-theme-landing"></div>
+<!-- END SECTION THEME COLOR -->
+<!-- SECTION FEATURES -->
+<div class="section-page-landing section-light-grey" id="features">
+    <div class="inner-section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+            <h2 class="text-center">Main Features</h2>
+            <!-- WRITE SOMETHING ABOUT FEATURES HERE -->
+            <h4 class="text-center">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            </h4>
+            <!-- END FEATURES DESCRIPTION -->
+            <!-- FEATURES COLUMN -->
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing border-hover-bottom text-center">
+                        <h4>RESPONSIVE DESIGN</h4>
+                        <img src="assets/img/flat-icon/s1.png" class="small-icon" alt="Features image">
+                        <p>
+                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing border-hover-bottom text-center">
+                        <h4>USE BOOTSTRAP 3.1.X</h4>
+                        <img src="assets/img/flat-icon/s2.png" class="small-icon" alt="Features image">
+                        <p>
+                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing border-hover-bottom text-center">
+                        <h4>+ COMING SOON</h4>
+                        <img src="assets/img/flat-icon/s7.png" class="small-icon" alt="Features image">
+                        <p>
+                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing border-hover-bottom text-center">
+                        <h4>EASY TO USE</h4>
+                        <img src="assets/img/flat-icon/s3.png" class="small-icon" alt="Features image">
+                        <p>
+                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- END FEATURES COLUMN -->
+
+            <div class="the-box-landing border-color-left">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h3>Nek sampeyan juga podo kelingan jaman semono iseh nggunake Teplok, monggo dipun kersakne hasil karya kulo</h3>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-default btn-teplok btn-block btn-lg btn-purchase"><i class="fa fa-shopping-cart"></i> Purchase Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END SECTION FEATURES -->
+<!-- SECTION SERVICES -->
+<div class="section-page-landing section-grey" id="services">
+    <div class="inner-section">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
+            <h4 class="text-center">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            </h4>
+            <div class="hi-icon-effect-1 hi-icon-effect-1a">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="the-box-landing the-box-transparent text-center">
+                            <h4>WEB DESIGN</h4>
+                            <a href="#fakelink" class="hi-icon hi-icon-screen">Web Design</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="the-box-landing the-box-transparent text-center">
+                            <h4>UI DESIGN</h4>
+                            <a href="#fakelink" class="hi-icon hi-icon-images">UI Design</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="the-box-landing the-box-transparent text-center">
+                            <h4>MOBILE APPS</h4>
+                            <a href="#fakelink" class="hi-icon hi-icon-mobile">Mobile Apps</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="the-box-landing the-box-transparent text-center">
+                            <h4>WEB HOSTING</h4>
+                            <a href="#fakelink" class="hi-icon hi-icon-archive">Web Hosting</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <h2 class="text-center">What They Say About Us?</h2>
+
+            <!-- TESTIMONIAL CAROUSEL -->
+            <div id="carousel-testimonial" class="carousel-landing carousel carousel-testimonial slide" data-ride="carousel">
+                <div class="testimonial-icon">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-testimonial" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-testimonial" data-slide-to="1"></li>
+                    <li data-target="#carousel-testimonial" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="testimonial-inner">
+                            <h5>
+                                &#34;
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi
+                                &#34;
+                            </h5>
+                            <h4 class="testimonial-name">Ari Rusmanto - Yogyakarta, <abbr title="Indonesia">ID</abbr></h4>
+                            <div class="testimonial-avatar">
+                                <img src="assets/img/avatar/arirusmanto.png" class="img-circle" alt="Avatar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-inner">
+                            <h5>
+                                &#34;
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi
+                                &#34;
+                            </h5>
+                            <h4 class="testimonial-name">Hana Sartika - Tokyo, Japan</h4>
+                            <div class="testimonial-avatar">
+                                <img src="assets/img/avatar/hanasartika.png" class="img-circle" alt="Avatar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-inner">
+                            <h5>
+                                &#34;
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi
+                                &#34;
+                            </h5>
+                            <h4 class="testimonial-name">Bambang Wicaksono - London, UK</h4>
+                            <div class="testimonial-avatar">
+                                <img src="assets/img/avatar/bambangwicaksono.png" class="img-circle" alt="Avatar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END TESTIMONIAL CAROUSEL -->
+
+        </div>
+    </div>
+</div>
+<!-- END SECTION SERVICES -->
+<!-- SECTION PORTFOLIO -->
+<div class="section-page-landing" id="portfolio">
+    <div class="inner-section">
+        <!-- MODAL PORTFOLIO -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- MODAL HEADER -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Project name</h4>
+                    </div>
+                    <!-- MODAL BODY -->
+                    <div class="modal-body">
+                        <img src="images/blog-img/image001.jpg" class="img-responsive" alt="Image portfolio">
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <button class="btn btn-default btn-teplok btn-block">Launch project</button>
+                                <table class="table table-modal-project">
+                                    <tbody>
+                                        <tr><td><strong>Type</strong></td><td class="text-right">Photography</td></tr>
+                                        <tr><td><strong>Client</strong></td><td class="text-right">Marlboro</td></tr>
+                                        <tr><td><strong>Year</strong></td><td class="text-right">2014</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-8">
+                                <p style="text-align: justify">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MODAL PORTFOLIO -->
+
+        <div class="container">
+            <h2 class="text-center">Our Work</h2>
+            <div class="portfolio-landing">
+                <!-- PORTFOLIO CATEGORY FILTER -->
+                <ul class="nav nav-pills nav-justified">
+                    <li class="filter" data-filter="all">All</li>
+                    <li class="filter" data-filter="web_design">Web Design</li>
+                    <li class="filter" data-filter="ui_design">UI Design</li>
+                    <li class="filter" data-filter="logo_design">Logo Design</li>
+                    <li class="filter" data-filter="photography">Photography</li>
+                    <li class="filter" data-filter="psd_template">PSD Template</li>
+                </ul>
+                <!-- END PORTFOLIO CATEGORY FILTER -->
+                <!-- PORTFOLIO GRID CONTENT -->
+                <ul id="portfolio-grid">
+                    <li class="mix ui_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small001.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix logo_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small002.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix photography">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small003.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix ui_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small004.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix web_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small005.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix logo_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small006.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix psd_template">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small007.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix logo_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small008.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix ui_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small009.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix psd_template">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small010.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix web_design">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small001.jpg" alt="Image portfolio">
+                    </li>
+                    <li class="mix psd_template">
+                        <div class="des">
+                            <h4>Project Name</h4>
+                            <p>Short descriptions</p>
+                            <p>
+                                <a data-toggle="modal" data-target="#myModal"><i class="fa fa-share"></i></a>
+                                <a href="#fakelink"><i class="fa fa-link"></i></a>
+                            </p>
+                        </div>
+                        <img src="images/image_small/image_small002.jpg" alt="Image portfolio">
+                    </li>
+                </ul>
+                <!-- END PORTFOLIO GRID CONTENT -->
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- END SECTION PORTFOLIO -->
+<!-- SECTION PRICING TABLE -->
+<div class="section-page-landing section-transparent" id="pricing-table">
+    <div class="section-overlay">
+        <div class="inner-section">
+            <div class="container">
+                <h2 class="text-center">Pricing Table</h2>
+                <!-- PRICING TABLE COLUMN -->
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table-landing">
+                            <div class="the-box-landing full">
+                                <div class="header">
+                                    <h3>BRONZE</h3>
+                                </div>
+                                <div class="circle-price-wrap">
+                                    <h2>&#36;25<small>Per-Month</small></h2>
+                                </div>
+                                <table class="table table-inner table-striped">
+                                    <tbody>
+                                        <tr><td><strong>250MB</strong> Storage</td></tr>
+                                        <tr><td><strong>2.5GB</strong> Monthly Bandwidth</td></tr>
+                                        <tr><td><strong>Free</strong> Set up</td></tr>
+                                        <tr><td><strong>10</strong> Email Accounts</td></tr>
+                                        <tr><td><strong>1</strong> Add ons Domain</td></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>
+                                                <a class="btn btn-primary">Purchase</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table-landing">
+                            <div class="the-box-landing full">
+                                <div class="header">
+                                    <h3>SILVER</h3>
+                                </div>
+                                <div class="circle-price-wrap">
+                                    <h2>&#36;50<small>Per-Month</small></h2>
+                                </div>
+                                <table class="table table-inner table-striped">
+                                    <tbody>
+                                        <tr><td><strong>500MB</strong> Storage</td></tr>
+                                        <tr><td><strong>5GB</strong> Monthly Bandwidth</td></tr>
+                                        <tr><td><strong>Free</strong> Set up</td></tr>
+                                        <tr><td><strong>25</strong> Email Accounts</td></tr>
+                                        <tr><td><strong>2</strong> Add ons Domain</td></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>
+                                                <a class="btn btn-primary">Purchase</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table-landing best-choice">
+                            <div class="the-box-landing full">
+                                <div class="header">
+                                    <h3>GOLD</h3>
+                                </div>
+                                <div class="circle-price-wrap">
+                                    <h2>&#36;100<small>Per-Month</small></h2>
+                                </div>
+                                <table class="table table-inner table-striped">
+                                    <tbody>
+                                        <tr><td><strong>1GB</strong> Storage</td></tr>
+                                        <tr><td><strong>10GB</strong> Monthly Bandwidth</td></tr>
+                                        <tr><td><strong>Free</strong> Set up</td></tr>
+                                        <tr><td><strong>100</strong> Email Accounts</td></tr>
+                                        <tr><td><strong>5</strong> Add ons Domain</td></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>
+                                                <a class="btn btn-default btn-teplok">Purchase</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table-landing">
+                            <div class="the-box-landing full">
+                                <div class="header">
+                                    <h3>PLATINUM</h3>
+                                </div>
+                                <div class="circle-price-wrap">
+                                    <h2>&#36;250<small>Per-Month</small></h2>
+                                </div>
+                                <table class="table table-inner table-striped">
+                                    <tbody>
+                                        <tr><td><strong>3GB</strong> Storage</td></tr>
+                                        <tr><td><strong>50GB</strong> Monthly Bandwidth</td></tr>
+                                        <tr><td><strong>Free</strong> Set up</td></tr>
+                                        <tr><td><strong>200</strong> Email Accounts</td></tr>
+                                        <tr><td><strong>10</strong> Add ons Domain</td></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>
+                                                <a class="btn btn-primary">Purchase</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END PRICING TABLE COLUMN -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BLOG SECTION -->
+<div class="section-page-landing" id="blog">
+    <div class="inner-section">
+        <div class="container">
+            <h2 class="text-center">From the Blog</h2>
+            <!-- BLOG STYLE 1 -->
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="the-box-landing full the-box-light-grey blog-landing">
+                        <div class="blog-column">
+                            <div class="img-wrap">
+                                <a href="blog-detail.html">
+                                    <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                    <img src="images/blog-img/image003.jpg" alt="Image blog">
+                                </a>
+                            </div>
+                            <div class="blog-column-des">
+                                <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                                <p class="additional">By <a href="#fakelink">John Doe</a> about 12 hours ago</p>
+                                <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="the-box-landing full the-box-light-grey blog-landing">
+                        <div class="blog-column">
+                            <div class="img-wrap">
+                                <a href="blog-detail.html">
+                                    <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                    <img src="images/blog-img/image002.jpg" alt="Image blog">
+                                </a>
+                            </div>
+                            <div class="blog-column-des">
+                                <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                                <p class="additional">By <a href="#fakelink">John Doe</a> about 12 hours ago</p>
+                                <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs"></div>
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="the-box-landing full the-box-light-grey blog-landing">
+                        <div class="blog-column">
+                            <div class="img-wrap">
+                                <a href="blog-detail.html">
+                                    <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                    <img src="images/blog-img/image001.jpg" alt="Image blog">
+                                </a>
+                            </div>
+                            <div class="blog-column-des">
+                                <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                                <p class="additional">By <a href="#fakelink">John Doe</a> about 12 hours ago</p>
+                                <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="the-box-landing full the-box-light-grey blog-landing">
+                        <div class="blog-column">
+                            <div class="img-wrap">
+                                <a href="blog-detail.html">
+                                    <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                    <img src="images/blog-img/image003.jpg" alt="Image blog">
+                                </a>
+                            </div>
+                            <div class="blog-column-des">
+                                <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                                <p class="additional">By <a href="#fakelink">John Doe</a> about 12 hours ago</p>
+                                <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BLOG STYLE 1 -->
+
+            <h4 class="text-center">YOU CAN ALSO USE THE FOLLOWING STYLE</h4>
+            <!-- BLOG STYLE 2 -->
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="the-box-landing full the-box-light-grey blog-landing border-color-left">
+                        <div class="blog-latest-img">
+                            <a href="blog-detail.html">
+                                <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                <img src="images/blog-img/image001.jpg" alt="Image blog">
+                            </a>
+                        </div>
+                        <div class="blog-latest-des">
+                            <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                            <p class="additional">By <a href="#fakelink">John Doe</a> about 9 hours ago</p>
+                            <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="the-box-landing full the-box-light-grey blog-landing border-color-left">
+                        <div class="blog-latest-img">
+                            <a href="blog-detail.html">
+                                <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                <img src="images/blog-img/image002.jpg" alt="Image blog">
+                            </a>
+                        </div>
+                        <div class="blog-latest-des">
+                            <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                            <p class="additional">By <a href="#fakelink">John Doe</a> about 9 hours ago</p>
+                            <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="the-box-landing full the-box-light-grey blog-landing border-color-left">
+                        <div class="blog-latest-img">
+                            <a href="blog-detail.html">
+                                <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                <img src="images/blog-img/image003.jpg" alt="Image blog">
+                            </a>
+                        </div>
+                        <div class="blog-latest-des">
+                            <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                            <p class="additional">By <a href="#fakelink">John Doe</a> about 9 hours ago</p>
+                            <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="the-box-landing full the-box-light-grey blog-landing border-color-left">
+                        <div class="blog-latest-img">
+                            <a href="blog-detail.html">
+                                <div class="show-link-icon"><i class="fa fa-link"></i></div>
+                                <img src="images/blog-img/image001.jpg" alt="Image blog">
+                            </a>
+                        </div>
+                        <div class="blog-latest-des">
+                            <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
+                            <p class="additional">By <a href="#fakelink">John Doe</a> about 9 hours ago</p>
+                            <a href="blog-detail.html" class="btn btn-default btn-teplok"><i class="fa fa-angle-right"></i>Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BLOG STYLE 2 -->
+        </div>
+    </div>
+</div>
+
+<!-- TEAM SECTION -->
+<div class="section-page-landing section-light-grey" id="team">
+    <div class="inner-section">
+        <div class="container">
+            <h2 class="text-center">Meet Our Team</h2>
+            <!-- TEAM COLUMN -->
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing text-center the-team-landing full">
+                        <div class="ava-wrap">
+                            <div class="see-detail"></div>
+                            <div class="button-link">
+                                <a href="#fakelink"><i class="fa fa-facebook"></i></a>
+                                <a href="#fakelink"><i class="fa fa-twitter"></i></a>
+                                <a href="#fakelink"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                            <img src="assets/img/avatar/ava001.png" alt="Image team">
+                        </div>
+                        <div class="des">
+                            <h3>Ari Rusmanto</h3>
+                            <h5>-ART DIRECTOR-</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing text-center the-team-landing full">
+                        <div class="ava-wrap">
+                            <div class="see-detail"></div>
+                            <div class="button-link">
+                                <a href="#fakelink"><i class="fa fa-facebook"></i></a>
+                                <a href="#fakelink"><i class="fa fa-twitter"></i></a>
+                                <a href="#fakelink"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                            <img src="assets/img/avatar/ava003.png" alt="Image team">
+                        </div>
+                        <div class="des">
+                            <h3>Mas Bambang</h3>
+                            <h5>-UI DESIGNER-</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing text-center the-team-landing full">
+                        <div class="ava-wrap">
+                            <div class="see-detail"></div>
+                            <div class="button-link">
+                                <a href="#fakelink"><i class="fa fa-facebook"></i></a>
+                                <a href="#fakelink"><i class="fa fa-twitter"></i></a>
+                                <a href="#fakelink"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                            <img src="assets/img/avatar/ava004.png" alt="Image team">
+                        </div>
+                        <div class="des">
+                            <h3>John Doe</h3>
+                            <h5>-COPYWRITER-</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing text-center the-team-landing full">
+                        <div class="ava-wrap">
+                            <div class="see-detail"></div>
+                            <div class="button-link">
+                                <a href="#fakelink"><i class="fa fa-facebook"></i></a>
+                                <a href="#fakelink"><i class="fa fa-twitter"></i></a>
+                                <a href="#fakelink"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                            <img src="assets/img/avatar/ava002.png" alt="Image team">
+                        </div>
+                        <div class="des">
+                            <h3>Nduk Annisa</h3>
+                            <h5>-PHOTOGRAPHER-</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs"></div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="the-box-landing text-center the-team-landing full">
+                        <div class="ava-wrap">
+                            <div class="see-detail"></div>
+                            <div class="button-link">
+                                <a href="#fakelink"><i class="fa fa-facebook"></i></a>
+                                <a href="#fakelink"><i class="fa fa-twitter"></i></a>
+                                <a href="#fakelink"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                            <img src="assets/img/avatar/ava006.png" alt="Image team">
+                        </div>
+                        <div class="des">
+                            <h3>Ebit Celenx</h3>
+                            <h5>-GRAPHIC DESIGNER-</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- YOU CAN USE THIS COLUMN FOR HIRING INFORMATION -->
+                <div class="col-md-9 col-sm-6">
+                    <div class="the-box-landing full text-center the-box-transparent">
+                        <h2>We're hiring, join with us...</h2>
+                        <h4>
+                            Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.
+                        </h4>
+                        <button class="btn btn-default btn-teplok btn-lg btn-distance"><i class="fa fa-cloud-upload"></i> Submit your application</button>
+                        <p class="text-danger">*note : all in one zipped file</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END TEAM COLUMN -->
+        </div>
+    </div>
+</div>
+<!-- END SECTION TEAM -->
+<!-- SECTION CLIENTS -->
+<div class="section-page-landing section-grey" id="client">
+    <div class="inner-section">
+        <div class="container text-center">
+            <h2 class="text-center">Our Clients</h2>
+            <div class="clients">
+                <div class="row">
+                    <div class="col-md-2 col-xs-6">
+                        <a href="#fakelink"><img src="images/client-logo/google-logo.png" alt="Image client"></a>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <a href="#fakelink"><img src="images/client-logo/wordpress-logo.png" alt="Image client"></a>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <a href="#fakelink"><img src="images/client-logo/yahoo-logo.png" alt="Image client"></a>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <a href="#fakelink"><img src="images/client-logo/marlboro-logo.png" alt="Image client"></a>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <a href="#fakelink"><img src="images/client-logo/microsoft-logo.png" alt="Image client"></a>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <a href="#fakelink"><img src="images/client-logo/nokia-logo.png" alt="Image client"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END SECTION COLUMN -->
+<!-- SECTION QUOTE OF THE DAY -->
+<div class="section-page-landing section-transparent" id="quote">
+    <div class="section-overlay">
+        <div class="inner-section">
+            <div class="container text-center">
+                <div class="quote">
+                    <h1>&#34;If you can't make it good at least make it look good&#34;</h1>
+                    <h3>- Bill Gates</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END SECTION QUOTE OF THE DAY -->
+<!-- SECTION CONTACT  -->
+<div class="section-page-landing" id="contact">
+    <div class="inner-section">
+        <div class="container">
+            <h2 class="text-center">Get in Touch</h2>
+            <form role="form" class="contact-form" id="ContactForm" method="post">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <input type="text" name="YourName" class="form-control" placeholder="Your name">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <input type="email" name="YourEmail" class="form-control" placeholder="Your email">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <input type="text" name="YourWebsite" class="form-control" placeholder="Your website">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="YourMessage" style="height: 200px" placeholder="Your message"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <h4 class="text-center" id="SimpleCaptcha"></h4>
+                            <input type="text" name="captcha" class="form-control" placeholder="Result">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                    </div>
+                </div>
+                <p class="text-center">
+                    <button type="submit" class="btn btn-default btn-teplok"><i class="fa fa-envelope"></i>Submit</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
