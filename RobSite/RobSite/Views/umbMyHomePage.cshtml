@@ -1,4 +1,5 @@
 ﻿@inherits UmbracoTemplatePage
+
 @{
     Layout = "Master.cshtml";
     var settingsNode = @CurrentPage.AncestorOrSelf(1).Children.Where("Name == \"Settings\"").First();
@@ -36,168 +37,135 @@
     <div class="inner-section">
         <div class="container">
             <!-- SECTION TITLE -->
-            <h2 class="text-center">Main Features</h2>
+            @{
+                var services = CurrentPage.Children.Where("Name == \"Services\"").First();
+            }
+            <h2 class="text-center">@services.title</h2>
             <!-- WRITE SOMETHING ABOUT FEATURES HERE -->
             <h4 class="text-center">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                @services.Description
             </h4>
             <!-- END FEATURES DESCRIPTION -->
             <!-- FEATURES COLUMN -->
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="the-box-landing border-hover-bottom text-center">
-                        <h4>RESPONSIVE DESIGN</h4>
-                        <img src="assets/img/flat-icon/s1.png" class="small-icon" alt="Features image">
-                        <p>
-                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
-                        </p>
+                @foreach (var service in services.Children())
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="the-box-landing border-hover-bottom text-center">
+                            <h3>@service.title</h3>
+                            <img src='@Umbraco.Media(service.icon).umbracoFile' class="small-icon" alt="Features image">
+                            <p>
+                                @service.description
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="the-box-landing border-hover-bottom text-center">
-                        <h4>USE BOOTSTRAP 3.1.X</h4>
-                        <img src="assets/img/flat-icon/s2.png" class="small-icon" alt="Features image">
-                        <p>
-                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="the-box-landing border-hover-bottom text-center">
-                        <h4>+ COMING SOON</h4>
-                        <img src="assets/img/flat-icon/s7.png" class="small-icon" alt="Features image">
-                        <p>
-                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="the-box-landing border-hover-bottom text-center">
-                        <h4>EASY TO USE</h4>
-                        <img src="assets/img/flat-icon/s3.png" class="small-icon" alt="Features image">
-                        <p>
-                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- END FEATURES COLUMN -->
-
-            <div class="the-box-landing border-color-left">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <h3>Nek sampeyan juga podo kelingan jaman semono iseh nggunake Teplok, monggo dipun kersakne hasil karya kulo</h3>
-                    </div>
-                    <div class="col-sm-3">
-                        <button class="btn btn-default btn-teplok btn-block btn-lg btn-purchase"><i class="fa fa-shopping-cart"></i> Purchase Item</button>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
 </div>
 <!-- END SECTION FEATURES -->
 <!-- SECTION SERVICES -->
-<div class="section-page-landing section-grey" id="services">
-    <div class="inner-section">
-        <div class="container">
-            <h2 class="text-center">Our Services</h2>
-            <h4 class="text-center">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-            </h4>
-            <div class="hi-icon-effect-1 hi-icon-effect-1a">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="the-box-landing the-box-transparent text-center">
-                            <h4>WEB DESIGN</h4>
-                            <a href="#fakelink" class="hi-icon hi-icon-screen">Web Design</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="the-box-landing the-box-transparent text-center">
-                            <h4>UI DESIGN</h4>
-                            <a href="#fakelink" class="hi-icon hi-icon-images">UI Design</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="the-box-landing the-box-transparent text-center">
-                            <h4>MOBILE APPS</h4>
-                            <a href="#fakelink" class="hi-icon hi-icon-mobile">Mobile Apps</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="the-box-landing the-box-transparent text-center">
-                            <h4>WEB HOSTING</h4>
-                            <a href="#fakelink" class="hi-icon hi-icon-archive">Web Hosting</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <h2 class="text-center">What They Say About Us?</h2>
-
-            <!-- TESTIMONIAL CAROUSEL -->
-            <div id="carousel-testimonial" class="carousel-landing carousel carousel-testimonial slide" data-ride="carousel">
-                <div class="testimonial-icon">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-testimonial" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-testimonial" data-slide-to="1"></li>
-                    <li data-target="#carousel-testimonial" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="testimonial-inner">
-                            <h5>
-                                &#34;
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi
-                                &#34;
-                            </h5>
-                            <h4 class="testimonial-name">Ari Rusmanto - Yogyakarta, <abbr title="Indonesia">ID</abbr></h4>
-                            <div class="testimonial-avatar">
-                                <img src="assets/img/avatar/arirusmanto.png" class="img-circle" alt="Avatar">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-inner">
-                            <h5>
-                                &#34;
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi
-                                &#34;
-                            </h5>
-                            <h4 class="testimonial-name">Hana Sartika - Tokyo, Japan</h4>
-                            <div class="testimonial-avatar">
-                                <img src="assets/img/avatar/hanasartika.png" class="img-circle" alt="Avatar">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-inner">
-                            <h5>
-                                &#34;
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi
-                                &#34;
-                            </h5>
-                            <h4 class="testimonial-name">Bambang Wicaksono - London, UK</h4>
-                            <div class="testimonial-avatar">
-                                <img src="assets/img/avatar/bambangwicaksono.png" class="img-circle" alt="Avatar">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END TESTIMONIAL CAROUSEL -->
-
-        </div>
-    </div>
-</div>
+@*<div class="section-page-landing section-grey" id="services">*@
+@*    <div class="inner-section">*@
+@*        <div class="container">*@
+@*            <h2 class="text-center">Our Services</h2>*@
+@*            <h4 class="text-center">*@
+@*                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.*@
+@*            </h4>*@
+@*            <div class="hi-icon-effect-1 hi-icon-effect-1a">*@
+@*                <div class="row">*@
+@*                    <div class="col-sm-3">*@
+@*                        <div class="the-box-landing the-box-transparent text-center">*@
+@*                            <h4>WEB DESIGN</h4>*@
+@*                            <a href="#fakelink" class="hi-icon hi-icon-screen">Web Design</a>*@
+@*                        </div>*@
+@*                    </div>*@
+@*                    <div class="col-sm-3">*@
+@*                        <div class="the-box-landing the-box-transparent text-center">*@
+@*                            <h4>UI DESIGN</h4>*@
+@*                            <a href="#fakelink" class="hi-icon hi-icon-images">UI Design</a>*@
+@*                        </div>*@
+@*                    </div>*@
+@*                    <div class="col-sm-3">*@
+@*                        <div class="the-box-landing the-box-transparent text-center">*@
+@*                            <h4>MOBILE APPS</h4>*@
+@*                            <a href="#fakelink" class="hi-icon hi-icon-mobile">Mobile Apps</a>*@
+@*                        </div>*@
+@*                    </div>*@
+@*                    <div class="col-sm-3">*@
+@*                        <div class="the-box-landing the-box-transparent text-center">*@
+@*                            <h4>WEB HOSTING</h4>*@
+@*                            <a href="#fakelink" class="hi-icon hi-icon-archive">Web Hosting</a>*@
+@*                        </div>*@
+@*                    </div>*@
+@*                </div>*@
+@*            </div>*@
+@*            <hr />*@
+@*            <h2 class="text-center">What They Say About Us?</h2>*@
+@**@
+@*            <!-- TESTIMONIAL CAROUSEL -->*@
+@*            <div id="carousel-testimonial" class="carousel-landing carousel carousel-testimonial slide" data-ride="carousel">*@
+@*                <div class="testimonial-icon">*@
+@*                    <span class="fa-stack fa-lg">*@
+@*                        <i class="fa fa-circle fa-stack-2x"></i>*@
+@*                        <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>*@
+@*                    </span>*@
+@*                </div>*@
+@*                <!-- Indicators -->*@
+@*                <ol class="carousel-indicators">*@
+@*                    <li data-target="#carousel-testimonial" data-slide-to="0" class="active"></li>*@
+@*                    <li data-target="#carousel-testimonial" data-slide-to="1"></li>*@
+@*                    <li data-target="#carousel-testimonial" data-slide-to="2"></li>*@
+@*                </ol>*@
+@*                <!-- Wrapper for slides -->*@
+@*                <div class="carousel-inner">*@
+@*                    <div class="item active">*@
+@*                        <div class="testimonial-inner">*@
+@*                            <h5>*@
+@*                                &#34;*@
+@*                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi*@
+@*                                &#34;*@
+@*                            </h5>*@
+@*                            <h4 class="testimonial-name">Ari Rusmanto - Yogyakarta, <abbr title="Indonesia">ID</abbr></h4>*@
+@*                            <div class="testimonial-avatar">*@
+@*                                <img src="assets/img/avatar/arirusmanto.png" class="img-circle" alt="Avatar">*@
+@*                            </div>*@
+@*                        </div>*@
+@*                    </div>*@
+@*                    <div class="item">*@
+@*                        <div class="testimonial-inner">*@
+@*                            <h5>*@
+@*                                &#34;*@
+@*                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi*@
+@*                                &#34;*@
+@*                            </h5>*@
+@*                            <h4 class="testimonial-name">Hana Sartika - Tokyo, Japan</h4>*@
+@*                            <div class="testimonial-avatar">*@
+@*                                <img src="assets/img/avatar/hanasartika.png" class="img-circle" alt="Avatar">*@
+@*                            </div>*@
+@*                        </div>*@
+@*                    </div>*@
+@*                    <div class="item">*@
+@*                        <div class="testimonial-inner">*@
+@*                            <h5>*@
+@*                                &#34;*@
+@*                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi*@
+@*                                &#34;*@
+@*                            </h5>*@
+@*                            <h4 class="testimonial-name">Bambang Wicaksono - London, UK</h4>*@
+@*                            <div class="testimonial-avatar">*@
+@*                                <img src="assets/img/avatar/bambangwicaksono.png" class="img-circle" alt="Avatar">*@
+@*                            </div>*@
+@*                        </div>*@
+@*                    </div>*@
+@*                </div>*@
+@*            </div>*@
+@*            <!-- END TESTIMONIAL CAROUSEL -->*@
+@**@
+@*        </div>*@
+@*    </div>*@
+@*</div>*@
 <!-- END SECTION SERVICES -->
 <!-- SECTION PORTFOLIO -->
 <div class="section-page-landing" id="portfolio">
@@ -243,12 +211,17 @@
             <div class="portfolio-landing">
                 <!-- PORTFOLIO CATEGORY FILTER -->
                 <ul class="nav nav-pills nav-justified">
-                    <li class="filter" data-filter="all">All</li>
-                    <li class="filter" data-filter="web_design">Web Design</li>
-                    <li class="filter" data-filter="ui_design">UI Design</li>
-                    <li class="filter" data-filter="logo_design">Logo Design</li>
-                    <li class="filter" data-filter="photography">Photography</li>
-                    <li class="filter" data-filter="psd_template">PSD Template</li>
+                    @{
+
+                    }
+                    
+
+                    @*                    <li class="filter" data-filter="all">All</li>*@
+                    @*                    <li class="filter" data-filter="web_design">Web Design</li>*@
+                    @*                    <li class="filter" data-filter="ui_design">UI Design</li>*@
+                    @*                    <li class="filter" data-filter="logo_design">Logo Design</li>*@
+                    @*                    <li class="filter" data-filter="photography">Photography</li>*@
+                    @*                    <li class="filter" data-filter="psd_template">PSD Template</li>*@
                 </ul>
                 <!-- END PORTFOLIO CATEGORY FILTER -->
                 <!-- PORTFOLIO GRID CONTENT -->
