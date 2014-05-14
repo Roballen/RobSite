@@ -270,7 +270,7 @@ a.btn.btn-default.btn-teplok:focus{
 	padding: 100px 0;
 }
 .section-page-landing#quote{
-	background:url(../../images/image001.jpg) 100% 0 no-repeat fixed;
+	background:url(../../images/desk.jpg) 100% 0 no-repeat fixed;
 	margin: 0 auto;
 	padding: 0;
 	width: 100%;
@@ -278,11 +278,11 @@ a.btn.btn-default.btn-teplok:focus{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/image001.jpg', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/image001.jpg', sizingMethod='scale')";
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/desk.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/desk.jpg', sizingMethod='scale')";
 }
 .section-page-landing#pricing-table{
-	background:url(../../images/image001.jpg) 100% 0 no-repeat fixed;
+	background:url(../../images/desk.jpg) 100% 0 no-repeat fixed;
 	margin: 0 auto;
 	padding: 0;
 	width: 100%;
@@ -290,8 +290,8 @@ a.btn.btn-default.btn-teplok:focus{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/image001.jpg', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/image001.jpg', sizingMethod='scale')";
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/desk.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/desk.jpg', sizingMethod='scale')";
 }
 
 

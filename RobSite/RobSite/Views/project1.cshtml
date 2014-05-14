@@ -1,4 +1,46 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = null;
+    Layout = "Master.cshtml";
 }
+
+    <div id="header-landing" class="blog">
+        @{ Html.RenderPartial("_TopNavigation"); }
+    </div>
+
+<div class="section-page-landing section-light-grey" id="project">
+    <div class="inner-section">
+        <div class="container">
+            <!-- SECTION TITLE -->
+
+            <h2 class="text-left">@CurrentPage.title</h2>
+            <!-- WRITE SOMETHING ABOUT FEATURES HERE -->
+            <h4 class="text-left">
+                @CurrentPage.LongDescription
+            </h4>
+            <h3>My Role</h3>
+            <h5>@CurrentPage.MyRole</h5>
+            
+                <h3>Technology:</h3>
+                @foreach (var tech in Umbraco.Content(CurrentPage.Technology.ToString().Split(new string[] {","}, StringSplitOptions.RemoveEmptyEntries)))
+                {
+                    <span class="label label-default">@tech.title</span>
+                }
+
+                <!-- END FEATURES DESCRIPTION -->
+                <!-- FEATURES COLUMN -->
+                <div class="row">
+    
+                    @foreach (var image in @Umbraco.Media(CurrentPage.Image.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries)))
+                    {
+                        <div class="col-md-6">
+                   
+                            <div class="img-wrap">
+                                <img src="@image.umbracoFile" alt="@CurrentPage.title Image" class="img-responsive">
+                            </div>
+                        </div>
+                    }    
+
+                </div>
+            </div>
+    </div>
+</div>

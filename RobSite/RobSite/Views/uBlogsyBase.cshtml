@@ -1,10 +1,13 @@
-@*
+﻿@*
     Base layout just to keep things a bit tidy in Umbraco back office.
 *@
 @inherits UmbracoTemplatePage
 @{
-    Layout = null;
+    Layout = "Master.cshtml";
 }
 
-@RenderSection("uBlogsyMain")
-	
+    <div id="header-landing" class="blog">
+        @{ Html.RenderPartial("_TopNavigation"); }
+    </div>
+
+    @RenderSection("uBlogsyMain")

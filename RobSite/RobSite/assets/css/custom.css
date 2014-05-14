@@ -1,0 +1,12 @@
+﻿
+#header-landing.blog { height: auto;}
+
+#features div.row .the-box-landing { height: 400px;}
+#project .img-wrap { margin-top: 15px;margin-bottom: 15px;height: 550px;overflow: hidden; }
+#pricing-table footer { background-color: inherit;}
+
+#pricing-table blockquote { border-left: 0;}
+#pricing-table .blockquote-reverse { border-right: 0;}
+#pricing-table footer { padding-top: 0;}
+
+.padtop { margin-top: 30px; }
