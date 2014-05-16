@@ -1,4 +1,9 @@
-﻿@inherits UmbracoTemplatePage
+﻿@using Helpers
+@using uBlogsy.BusinessLogic
+@using uBlogsy.Common
+@using uBlogsy.Web
+
+@inherits UmbracoTemplatePage
 
 @{
     Layout = "Master.cshtml";
@@ -420,29 +425,37 @@
             <!-- BLOG STYLE 1 -->
             <div class="row">
                 @{
-                
-                    var blog = @CurrentPage.Children.Where("Name == \"Blog\"").First();
-                    var posts = @blog.Descendants("uBlogsyPost").Items;
-                    var latestPosts = @posts.OrderByDescending(x => x.GetProperty("uBlogsyPostDate").Value);
+                    var blog = MyUmbracoHelper.GetRecentPosts(@CurrentPage); //@CurrentPage.Children.Where("Name == \"Blog\"").First().Descendants("uBlogsyPost");
+//                    var nodes = PostService.Instance.GetPosts(blog);
                 }
                
-
-                
-
-                @foreach (var post in @latestPosts)
+                @foreach (var post in blog)
                 {
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <div class="the-box-landing full the-box-light-grey blog-landing">
                             <div class="blog-column">
-                                <div class="img-wrap">
-                                    <a href="blog-detail.html">
-                                        <div class="show-link-icon"><i class="fa fa-link"></i></div>
-                                        <img src="@post.uBlogsyPostImage" alt="Image blog">
-                                    </a>
-                                </div>
+                              @if (!string.IsNullOrEmpty(@post.Image))
+                                        {
+                                            <div class="img-wrap">
+                                                <a href="blog-detail.html">
+                                                    <div class="show-link-icon"><i class="fa fa-link"></i></div>
+
+                                                    <img src="@post.Image" alt="@post.Title Image" />
+
+
+                                                </a>
+                                            </div>
+                                        }
                                 <div class="blog-column-des">
-                                    <h3><a href="blog-detail.html">Duis autem vel eum iriure dolor in hendrerit in vulputate</a></h3>
-                                    <p class="additional">By <a href="#fakelink">John Doe</a> about 12 hours ago</p>
+                                    <h3><a href="blog-detail.html" class="blog-title">@post.Title</a></h3>
+                                    <p class="additional">
+                                            @if (!string.IsNullOrEmpty(@post.Author)){
+                                                <text>By </text>
+                                             <a href="#">@post.Author</a>
+                                            }
+
+                                        <small>&nbsp;@post.Date</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -521,7 +534,7 @@
 @*                        </div>*@
 @*                    </div>*@
 @*                </div>*@
-@*            </div>*@
+            </div>
             <!-- END BLOG STYLE 1 -->
 
 @*            <h4 class="text-center">YOU CAN ALSO USE THE FOLLOWING STYLE</h4>*@
