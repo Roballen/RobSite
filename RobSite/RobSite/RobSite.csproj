@@ -470,6 +470,9 @@
     <Content Include="Views\project1.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\BlogLanding.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Shared\ShowImage.cshtml" />
+    <Content Include="Views\BlogPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

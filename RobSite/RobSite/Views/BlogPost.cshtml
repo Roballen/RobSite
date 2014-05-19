@@ -1,0 +1,145 @@
+﻿@using uBlogsy.BusinessLogic
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+
+    var tag = Request.QueryString["tag"];
+    var label = Request.QueryString["label"];
+    var author = Request.QueryString["author"];
+    var searchTerm = Request.QueryString["search"];
+    var commenter = Request.QueryString["commenter"];
+    int page = int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+    var year = Request.QueryString["year"];
+    var month = Request.QueryString["month"];
+    var day = Request.QueryString["day"];
+    var prev = PostService.Instance.GetNextPost(Model.Content, tag, label, author, searchTerm, commenter, year, month, day);
+    var next = PostService.Instance.GetPreviousPost(Model.Content, tag, label, author, searchTerm, commenter, year, month, day);
+
+    @RenderHeader()
+    @RenderPost()
+}
+
+@helper RenderPost()
+{
+    <div id="blog_detail" class="section-page-landing">
+        <div class="inner-section">
+            <div class="container">
+
+                <!-- BLOG TITLE -->
+                <h1 class="post-heading">@Model.Content.GetPropertyValue("uBlogsyContentTitle")</h1>
+                <!-- END BLOG TITLE -->
+
+                <hr />
+                <div class="row">
+                    <div class="col-md-9">
+                        <!-- BLOG POST IMAGE -->
+                        @RenderPostImage(@Model.Content,"")
+                        <p class="subtitle">
+                            @Model.Content.GetPropertyValue("uBlogsyContentSummary")
+                        </p>
+                        <!-- BLOG POST IMAGE -->
+                        <!-- ADDITIONAL INFO BLOG -->
+                        <div class="post-additional-detail">
+                            <ul class="list-unstyled list-inline">
+                                <li class="">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                    <strong>@(Model.Content.GetPropertyValue<DateTime>("uBlogsyPostDate").ToString("MM/dd/yyyy"))</strong>
+                                </li>
+
+                                @{
+                                    var tags = PostService.Instance.GetTags(@Model.Content, false).Select(x => x.Key);
+                                }
+                                @foreach (var tag in tags)
+                                {
+                                    if (tag.IsEmpty()) { continue; }
+                                    <li>
+                                        <i class="glyphicon glyphicon-tag"></i>
+                                        <a href="@CurrentPage.Url()?tag=@Server.UrlEncode(tag)" title="@tag">@tag</a>
+                                    </li>
+                                }
+                            </ul>
+                            <div class="row">
+                                @{
+                                    var authors = PostService.Instance.GetAuthors(@Model.Content, false); 
+                                }
+                                @if (authors.Any())
+                                {
+                                    <div class="col-sm-6">
+                                        <p>
+                                            Written by 
+                                            @foreach (var author in authors)
+                                            {
+                                                <a href="@author.Url()">@author.GetPropertyValue("uBlogsyAuthorName").ToString().Trim()</a>
+                                            }
+                                        </p>
+                                    </div>
+                                }
+
+                                <div class="col-sm-6">
+                                    <p class="text-right">@(Model.Content.GetPropertyValue<DateTime>("uBlogsyPostDate").ToString("dddd MMMM yyyy"))</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END ADDITIONAL INFO BLOG -->
+                        <!-- BLOG CONTENT -->
+                        @Html.Raw(library.RenderMacroContent(Model.Content.GetPropertyValue<string>("uBlogsyContentBody"), Model.Content.Id))
+                    </div>
+                </div>
+                <hr />
+                <h3>LEAVE COMMENTS</h3>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'robsite'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function () {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    </div>
+}
+
+@helper RenderHeader()
+{
+    <div id="header-landing" class="blog">
+        @{ Html.RenderPartial("_TopNavigation"); }
+    </div>
+}
+
+@helper RenderPostImage(IPublishedContent node, string defaultImage)
+{
+    var imageId = node.GetPropertyValue<string>("uBlogsyPostImage");
+
+    if (string.IsNullOrWhiteSpace(imageId) && string.IsNullOrWhiteSpace(defaultImage))
+    {
+        // no property or default so do nothing
+        return;
+    }
+
+    var imageData = new Dictionary<string, object>()
+             {
+                 {"Alias", "uBlogsyPostImage"},
+                 {"Suffix", ""},
+                 {"Height", -1},
+                 {"Width", -1},
+                 {"CssClass", "img-responsive img-post-detail"},
+                 {"Title", "Image Post"},
+                 {"Map", string.Empty },
+                 {"DefaultImage", defaultImage},
+                 {"Node", node}
+             };
+
+            <a href="@node.Url" title="Post image">
+                <figure class="uBlogsy_post_image">
+                    @Html.Partial("~/Views/Partials/uBlogsy/Shared/uBlogsyShowImage.cshtml", imageData)
+                </figure>
+            </a>
+}

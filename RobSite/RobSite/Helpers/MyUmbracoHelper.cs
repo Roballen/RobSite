@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Core.Models;
-using umbraco.presentation.umbraco;
 using Umbraco.Web;
 
 namespace Helpers
@@ -12,7 +11,7 @@ namespace Helpers
         public static IEnumerable<BlogEntry> GetRecentPosts(IPublishedContent content)
         {
             //all posts
-            var posts = content.Children.Where("Name == \"Blog\"").First().Descendants("uBlogsyPost").Take(8);
+            var posts = content.Children.Where("Name == \"Blog\"").First().Descendants("uBlogsyPost").OrderByDescending(x => x.GetPropertyValue<DateTime>("uBlogsyPostDate")).Take(8);
             return posts.Select(TranslateSearchResultToBlogEntry).ToList();
         }
 
@@ -28,6 +27,7 @@ namespace Helpers
             var image = results.GetPropertyValue<string>("uBlogsyPostImage");
             if (!string.IsNullOrEmpty(image))
             post.Image =  helper.Media(image).umbracoFile;
+            post.Summary = results.GetPropertyValue<string>("uBlogsyContentSummary");
             return post;
         }
     }
@@ -42,6 +42,7 @@ namespace Helpers
         public string Image { get; set; }
         public List<string> Categories { get; set; }
         public List<string> Tags { get; set; }
+        public string Summary { get; set; }
 
     }
 }

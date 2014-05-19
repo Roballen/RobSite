@@ -12,3 +12,13 @@
 .padtop { margin-top: 30px; }
 
 .the-box-landing h3 .blog-title { font-size: 20px;font-weight: 400;}
+#blog .blog-column { height: 225px;}
+
+#blog_landing .col-md-9 h2 { margin: 0;font-size: 20px; border-bottom: 1px solid #c4c4c4}
+#blog_landing a { color: #333; }
+#blog_landing a:hover { text-decoration: none;color: #B3C833; }
+#blog_landing p { color: #666666; }
+#blog_landing .row { margin-bottom: 20px;}
+
+#blog_detail h1 { font-size: 45px;font-weight: 300; }
+#blog_detail .subtitle { font-size: 30px;font-weight: 300;line-height: 120%; }
