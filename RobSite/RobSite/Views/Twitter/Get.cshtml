@@ -1,0 +1,21 @@
+﻿@using System.Text
+@using Newtonsoft.Json
+@model dynamic
+
+<ul>
+
+    @foreach (var tweet in Model)
+    {
+        var text = tweet.text.Value;
+        foreach (var url in tweet.entities.urls)
+        {
+            text = text.Replace(url.url.Value, "<a href='" + url.expanded_url.Value + "'>" + url.display_url.Value + "</a>");
+        }
+
+        <li>
+            <p>
+                @Html.Raw(@text)
+            </p>
+        </li>
+    }
+</ul>

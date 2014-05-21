@@ -122,6 +122,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="oAuthTwitterWrapper">
+      <HintPath>..\packages\TwitterWrapper.Net.1.0.0\lib\net\oAuthTwitterWrapper.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.5242.22741, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\UmbracoCms.Core.7.1.2\lib\SQLCE4Umbraco.dll</HintPath>
@@ -473,6 +479,9 @@
     <Content Include="Views\BlogLanding.cshtml" />
     <Content Include="Views\Partials\uBlogsy\Shared\ShowImage.cshtml" />
     <Content Include="Views\BlogPost.cshtml" />
+    <Content Include="Views\BaseMaster.cshtml" />
+    <Content Include="Views\InnerMaster.cshtml" />
+    <Content Include="Views\Twitter\Get.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -491,7 +500,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controllers\TwitterController.cs" />
     <Compile Include="Helpers\MyUmbracoHelper.cs" />
+    <Compile Include="Helpers\TwitterHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

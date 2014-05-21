@@ -28,6 +28,7 @@ namespace Helpers
             if (!string.IsNullOrEmpty(image))
             post.Image =  helper.Media(image).umbracoFile;
             post.Summary = results.GetPropertyValue<string>("uBlogsyContentSummary");
+            post.Url = results.Url();
             return post;
         }
     }
@@ -43,6 +44,7 @@ namespace Helpers
         public List<string> Categories { get; set; }
         public List<string> Tags { get; set; }
         public string Summary { get; set; }
+        public string Url { get; set; }
 
     }
 }

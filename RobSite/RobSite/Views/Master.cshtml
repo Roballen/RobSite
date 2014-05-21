@@ -1,134 +1,22 @@
-﻿@inherits UmbracoTemplatePage
-@{
-    Layout = null;
+﻿@{
+    Layout = "BaseMaster.cshtml";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@CurrentPage.sitename @CurrentPage.byline</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Rob Allen">
-    <!-- CSS -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/animate.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <link href="/assets/css/custom.css" rel="stylesheet">
-    <link href="/assets/css/style-responsive.css" rel="stylesheet">
-    <link href="/assets/third/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <!-- REQUIRED FOR LANDING PAGE -->
-    <link href="/assets/third/vegas/jquery.vegas.min.css" rel="stylesheet">
-    <link href="/assets/third/hovericon/css/component.css" rel="stylesheet">
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+@section main {
+    
+    @RenderBody()
 
+}
 
-</head>
-
-<!-- BODY WITH DATA STYPE FOR SCROLLSPY -->
-<body class="tooltips" id="top" data-spy="scroll" data-target="#myScrollspy">
-
-
-    <!-- START PAGE -->
-    <div class="wrapper">
-
-            @RenderBody();
-
-        <!-- END SECTION CONTACT -->
-        <!-- FOOTER -->
-        <footer>
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-sm-3">
-                        <h5>ABOUT US</h5>
-                        <p>
-                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-                            <br />
-                            <a href="#fakelink">Read more</a>
-                        </p>
-                    </div>
-                    <div class="col-sm-3">
-                        <h5>NAV MENUS</h5>
-                        <ul>
-                            <li><a href="#fakelink">Template Features</a></li>
-                            <li><a href="#fakelink">Our Services</a></li>
-                            <li><a href="#fakelink">Our Portfolio</a></li>
-                            <li><a href="blog-list.html">Blog Page</a></li>
-                            <li><a href="#fakelink">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3">
-                        <h5>OUR LOCATION</h5>
-                        <address>
-                            <strong>Teplok - Responsive Landing Template</strong><br>
-                            Ds. Jatirejo RT 02/21 No 25A<br>
-                            Sendangadi, Mlati, Sleman<br>
-                            Yogyakarta, Indonesia<br>
-                            <abbr title="Phone">P:</abbr> (+6274) 123-4567
-                        </address>
-
-                        <address>
-                            <strong>Email : </strong><br>
-                            <a href="mailto:#">first.last@example.com</a>
-                        </address>
-                    </div>
-                    <div class="col-sm-3">
-                        <h5>SUBSCRIBE</h5>
-                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,</p>
-                        <form role="form" method="POST" class="form-subscribe">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Email address">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default btn-teplok" type="button"><i class="fa fa-chevron-right"></i></button>
-                                </span>
-                            </div>
-                        </form>
-                        <p>*we never send junks</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer">
-                <div class="container">
-                    &copy; 2014 <a href="#fakelink">Company Name</a><br />
-                    <a href="#fakelink">Teplok - Responsive Landing Template</a> design with love by <a href="http://isohdesign.com" target="_blank">ID Studio</a> in Yogyakarta, <abbr title="Indonesia">ID</abbr>
-                </div>
-            </div>
-        </footer>
-        <!-- END FOOTER -->
-        <!-- BACK TO TOP BUTTON -->
-        <div id="back-top">
-            <a href="#top"><i class="fa fa-chevron-up"></i></a>
-        </div>
-        <!-- END BACK TO TOP -->
-
-
-    </div>
-
-
-    <!-- END OF PAGE -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/third/validator/bootstrapValidator.min.js"></script>
-    <script src="/assets/js/jquery.smooth-scroll.js"></script>
-
-    <!-- REQUIRED FOR LANDING PAGE -->
-    <script src="/assets/third/hovericon/js/modernizr.custom.js"></script>
-    <script src="/assets/third/parallax/jquery.parallax-1.1.3.js"></script>
-    <script src="/assets/third/parallax/TweenMax.min.js"></script>
-    <script src="/assets/third/parallax/jquery.superscrollorama.js"></script>
-    <script src="/assets/third/mixitup/jquery.mixitup.js"></script>
-    <script src="/assets/third/vegas/jquery.vegas.min.js"></script>
-    <script src="/assets/js/teplok-one-page.js"></script>
-</body>
-</html>
+@section bottomPage
+{
+        <!-- REQUIRED FOR LANDING PAGE -->
+<script src="/assets/third/hovericon/js/modernizr.custom.js"></script>
+<script src="/assets/third/parallax/jquery.parallax-1.1.3.js"></script>
+<script src="/assets/third/parallax/TweenMax.min.js"></script>
+<script src="/assets/third/parallax/jquery.superscrollorama.js"></script>
+<script src="/assets/third/mixitup/jquery.mixitup.js"></script>
+<script src="/assets/third/vegas/jquery.vegas.min.js"></script>
+<script src="/assets/js/teplok-one-page.js"></script>
+}
