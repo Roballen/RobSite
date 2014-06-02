@@ -22,3 +22,7 @@
 
 #blog_detail h1 { font-size: 45px;font-weight: 300; }
 #blog_detail .subtitle { font-size: 30px;font-weight: 300;line-height: 120%; }
+
+.twitter-list { word-wrap: break-word;}
+.twitter-list li { border-bottom: 1px solid #666;}
+#header-landing p.follow { font-size: 18px;color: #fff; }

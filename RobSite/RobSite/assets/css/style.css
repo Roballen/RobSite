@@ -215,13 +215,13 @@ a.btn.btn-default.btn-teplok:focus{
 #header-landing .awesome-slogan h4 span{
 	font-weight: 800;
 }
-#header-landing .awesome-slogan p{
+/*#header-landing .awesome-slogan p{
 	font-size: 18px;
 	margin: 20px 0;
 	color: #fff;
 	padding: 5px 10px;
 	display: block;
-}
+}*/
 #header-landing .awesome-slogan .social-icons{
 	padding: 20px;
 	display: block;

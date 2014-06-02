@@ -1,0 +1,22 @@
+@{
+    Layout = "BaseMaster.cshtml";
+}
+
+
+@section main {
+    
+    @RenderBody()
+
+}
+
+@section bottomPage
+{
+        <!-- REQUIRED FOR LANDING PAGE -->
+<script src="/assets/third/hovericon/js/modernizr.custom.js"></script>
+<script src="/assets/third/parallax/jquery.parallax-1.1.3.js"></script>
+<script src="/assets/third/parallax/TweenMax.min.js"></script>
+<script src="/assets/third/parallax/jquery.superscrollorama.js"></script>
+<script src="/assets/third/mixitup/jquery.mixitup.js"></script>
+<script src="/assets/third/vegas/jquery.vegas.min.js"></script>
+<script src="/assets/js/teplok-one-page.js"></script>
+}

@@ -9,7 +9,7 @@
     Layout = "Master.cshtml";
     var settingsNode = @CurrentPage.AncestorOrSelf(1).Children.Where("Name == \"Settings\"").First();
     var projects = @CurrentPage.Children.Where("Name == \"Projects\"").First();
-    var categories = @projects.Descendants("projectCategory");
+    var categories = @projects.Descendants("Technology");
 }
 
 <!-- HEADER SECTION CONTENT -->
@@ -20,7 +20,7 @@
     <div class="awesome-slogan">
         <h2>@CurrentPage.bannerheader</h2>
         <h4>@CurrentPage.bannersubheader</h4>
-        <p>FOLLOW US</p>
+        <p class="follow">FOLLOW US</p>
         <div class="clear"></div>
         <div class="social-icons">
             <a href="@settingsNode.github" data-toggle="tooltip" title="Github"><img src="assets/img/social-icons/github.png" alt="Github icon"></a>
@@ -222,7 +222,11 @@
 
                     @foreach (var item in categories)
                     {
-                        <li class="filter" data-filter="@item.categoryName">@item.categoryName</li>
+                        if (item.allowfilter)
+                        {
+                         <li class="filter" data-filter="@item.title.ToString().Replace(".","-")">@item.title.ToString().Replace(".", "-")</li>                           
+                        }
+
                     }
 
 
@@ -240,9 +244,9 @@
                     @foreach (var item in @projects.Descendants("project"))
                     {
                         var name = "";
-                        foreach (var mixin in Umbraco.Content(item.categories.ToString().Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries)))
+                        foreach (var mixin in Umbraco.Content(item.technology.ToString().Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries)))
                         {
-                            name += ' ' + @mixin.categoryName;
+                            name += ' ' + @mixin.title.ToString().Replace(".","-");
                         }
                         <li class="mix @name">
                             <div class="des">

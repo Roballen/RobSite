@@ -1,4 +1,4 @@
-﻿@using System.Linq
+@using System.Linq
 @using uBlogsy.Common.Extensions
 @using uBlogsy.BusinessLogic
 @using uHelpsy.Extensions
@@ -23,7 +23,7 @@
     var day = Request.QueryString["day"];
     int postCount;
 
-    var posts = PostService.Instance.GetPosts(Model.Content, tag, label, author, searchTerm, commenter, year, month, day, out postCount).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToIPublishedContent(true);
+    var posts = PostService.Instance.GetPosts(Model.Content, tag, label, author, searchTerm, commenter, year, month, day, out postCount).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToIPublishedContent(true).OrderByDescending(x => x.GetPropertyValue<DateTime>("uBlogsyPostDate"));
     //var posts = NoLuceneFallbackService.Instance.GetPosts(Model.Content.Id, tag, label, author, searchTerm, commenter, year, month, out postCount).Skip((page - 1) * itemsPerPage).Take(itemsPerPage);
 
     // pagination

@@ -1,4 +1,4 @@
-﻿@using uBlogsy.BusinessLogic
+@using uBlogsy.BusinessLogic
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "InnerMaster.cshtml";
@@ -13,14 +13,17 @@
     var year = Request.QueryString["year"];
     var month = Request.QueryString["month"];
     var day = Request.QueryString["day"];
-    var prev = PostService.Instance.GetNextPost(Model.Content, tag, label, author, searchTerm, commenter, year, month, day);
-    var next = PostService.Instance.GetPreviousPost(Model.Content, tag, label, author, searchTerm, commenter, year, month, day);
+//    var prev = PostService.Instance.GetNextPost(Model.Content, tag, label, author, searchTerm, commenter, year, month, day);
+//    var next = PostService.Instance.GetPreviousPost(Model.Content, tag, label, author, searchTerm, commenter, year, month, day);
 
     @RenderHeader()
     @RenderPost()
+
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
+
 }
 
-@helper RenderPost()
+        @helper RenderPost()
 {
     <div id="blog_detail" class="section-page-landing">
         <div class="inner-section">

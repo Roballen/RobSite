@@ -21,7 +21,7 @@ namespace RobSite.Helpers
             _twitConfig = new TwitterConfiguration()
             {
                 ScreenName = "RobAllen_III",
-                Count = "1"
+                //Count = "4"
             };
         }
 

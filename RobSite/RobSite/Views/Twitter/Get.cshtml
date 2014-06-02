@@ -2,20 +2,28 @@
 @using Newtonsoft.Json
 @model dynamic
 
-<ul>
+<ul class="twitter-list">
+    @{
+        var count = 0;
+    }
 
     @foreach (var tweet in Model)
     {
-        var text = tweet.text.Value;
-        foreach (var url in tweet.entities.urls)
+        if (count < 4)
         {
-            text = text.Replace(url.url.Value, "<a href='" + url.expanded_url.Value + "'>" + url.display_url.Value + "</a>");
-        }
+            count++;
+            var text = tweet.text.Value;
 
-        <li>
-            <p>
-                @Html.Raw(@text)
-            </p>
-        </li>
+            foreach (var url in tweet.entities.urls)
+            {
+                text = text.Replace(url.url.Value, "<a href='" + url.expanded_url.Value + "'>" + url.display_url.Value + "</a>");
+            }
+
+            <li>
+                <p>
+                    @Html.Raw(@text)
+                </p>
+            </li>
+        }
     }
 </ul>
